@@ -1,0 +1,140 @@
+<!--<ion-header>-->
+  <!--  <ion-navbar color="twitter">-->
+  <!--    <ion-title>-->
+  <!--      Todos! &#45;&#45;x-->
+  <!--    </ion-title>-->
+  <!--    <ion-buttons end>-->
+  <!--      <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>-->
+  <!--    </ion-buttons>-->
+  <!--  </ion-navbar>-->
+<!--</ion-header>-->
+
+<!--<ion-content >-->
+  <!--  <ion-list >-->
+  <!--    <ion-item-sliding *ngFor="let item of items;let i=index">-->
+
+  <!--      <ion-item >-->
+        <!--<div id="inside" class="{{getItemColor(i)}}">-->
+  <!--&lt;!&ndash;      <ion-item class="items-pink"  (click)="viewItem(item)"  >&ndash;&gt;-->
+  <!--        <ion-card class="todo-title">-->
+  <!--          <h2 class="{{getClass(i)}}">{{item.title}}</h2>-->
+  <!--          &lt;!&ndash;<h2   class="{{item.dis<60? 'todo-title':'todo-titledone'}}">{{item.title}}</h2>&ndash;&gt;-->
+  <!--          &lt;!&ndash;<h2 *ngIf="item.dis<60"  class="todo-titledone">{{item.title}}</h2>&ndash;&gt;-->
+  <!--          <h3><span>{{item.myDate}}</span><div class="remainDays">{{item.dis+" days remain"}}</div></h3>-->
+  <!--        </ion-card>-->
+  <!--        &lt;!&ndash;<ion-range [(ngModel)]="  item.dis" color="danger" pin="true"> </ion-range>&ndash;&gt;-->
+        <!--</div>-->
+  <!--      </ion-item>-->
+
+  <!--      <ion-item-options side="right">-->
+  <!--        <button ion-button color="danger" (click)="deleteItem(i)">-->
+  <!--          <ion-icon name="delete"></ion-icon>-->
+  <!--          delete-->
+  <!--        </button>-->
+  <!--      </ion-item-options>-->
+  <!--    </ion-item-sliding>-->
+  <!--  </ion-list>-->
+
+
+<!--</ion-content>-->
+
+<ion-header>
+  <ion-navbar color="twitter">
+    <ion-title>
+      Todos! --x
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content inset>
+  <ion-list>
+
+    <ion-list-header>
+      Targets
+    </ion-list-header>
+
+    <ion-item-sliding *ngFor="let item of items;let i=index">
+      <ion-item  (click)="viewItem(item)">
+
+        <!--<ion-label>-->
+        <!--<ion-card>-->
+
+
+            <!--<ion-col>-->
+              <h2   class="{{getClass(i)}}">{{item.title}}</h2>
+            <!--</ion-col>-->
+
+
+
+
+
+          <!--<h2   class="{{item.dis<60? 'todo-title':'todo-titledone'}}">{{item.title}}</h2>-->
+          <!--<h2 *ngIf="item.dis<60"  class="todo-titledone">{{item.title}}</h2>-->
+            <!--<ion-col>-->
+              <h3><span>{{item.myDate}}</span></h3>
+                <!--<div class="remainDays">{{item.dis+" days remain"}}</div></h3>-->
+
+        <!--<p><ion-range [(ngModel)]="item.dis" color="danger" pin="true"></ion-range></p>-->
+                <ion-note item-right>{{item.dis+" days remain"}}</ion-note>
+
+            <!--</ion-col>-->
+
+          <!--</ion-row>-->
+          <!--<ion-row>-->
+
+          <!--</ion-row>-->
+        <!--</ion-card>-->
+        <!--</ion-label>-->
+        <!--<div item-content ><ion-range [(ngModel)]="item.dis" color="danger" pin="true"> </ion-range></div>-->
+
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deleteItem(i)">
+          <ion-icon name="delete"></ion-icon>
+          delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+
+</ion-content>
+
+
+
+
+  <!--<ion-buttons >-->
+    <!--<button ion-button  block (click)="doAlert()"  >Show Basic Alert</button>-->
+  <!--</ion-buttons>-->
+
+  <!--<ion-buttons start>-->
+    <!--<button ion-button >-->
+      <!--Contact-->
+      <!--<ion-icon name="contact" item-left></ion-icon>-->
+    <!--</button>-->
+  <!--</ion-buttons>-->
+
+  <!--<ion-buttons end>-->
+    <!--<button ion-button >-->
+
+      <!--<ion-icon name="search"></ion-icon>-->
+        <!--Search-->
+    <!--</button>-->
+  <!--</ion-buttons>-->
+
+  <!--<ion-list>-->
+    <!--<ion-item>-->
+      <!--<ion-icon name="leaf" item-left></ion-icon>-->
+      <!--TTT-->
+      <!--<ion-icon name="rose" item-right></ion-icon>-->
+    <!--</ion-item>-->
+  <!--</ion-list>-->
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+<!--
+  Generated template for the Timer page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="twitter">
+    <ion-title>Timer!</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Choose the Item</ion-label>
+      <ion-select [(ngModel)]="Choose-Item">
+        <ion-option value="A">Abstract</ion-option>
+        <ion-option value="C">Clean</ion-option>
+        <ion-option value="T">TOEFL</ion-option>
+        <ion-option value="G">GRE</ion-option>
+        <ion-option value="W">Work</ion-option>
+        <ion-option value="H">Homework</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>CountDown Time</ion-label>
+      <ion-select [(ngModel)]="CountDown-Time" interface="popover">
+        <ion-option value="10">10min</ion-option>
+        <ion-option value="l5">15min</ion-option>
+        <ion-option value="20">20min</ion-option>
+        <ion-option value="30">30min</ion-option>
+        <ion-option value="45">45min</ion-option>
+        <ion-option value="60">60min</ion-option>
+        <ion-option value="90">90min</ion-option>
+        <ion-option value="other">other time</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label >Finish Time</ion-label>
+      <ion-input item-right type="Time"></ion-input>
+      <ion-select [(ngModel)]="month">
+        <ion-option value="01">January</ion-option>
+        <ion-option value="02">February</ion-option>
+        <ion-option value="03">March</ion-option>
+        <ion-option value="04">April</ion-option>
+        <ion-option value="05">May</ion-option>
+        <ion-option value="06">June</ion-option>
+        <ion-option value="07">July</ion-option>
+        <ion-option value="08">August</ion-option>
+        <ion-option value="09">September</ion-option>
+        <ion-option value="10">October</ion-option>
+        <ion-option value="11">November</ion-option>
+        <ion-option value="12" checked="true">December</ion-option>
+      </ion-select>
+      <ion-select [(ngModel)]="Day">
+        <ion-option>01</ion-option>
+        <ion-option>02</ion-option>
+        <ion-option>03</ion-option>
+        <ion-option>04</ion-option>
+        <ion-option>05</ion-option>
+        <ion-option checked="true">06</ion-option>
+        <ion-option>07</ion-option>
+        <ion-option>08</ion-option>
+        <ion-option>09</ion-option>
+        <ion-option>10</ion-option>
+        <ion-option>11</ion-option>
+        <ion-option>12</ion-option>
+        <ion-option>13</ion-option>
+        <ion-option>14</ion-option>
+        <ion-option>15</ion-option>
+        <ion-option>16</ion-option>
+        <ion-option>17</ion-option>
+        <ion-option>18</ion-option>
+        <ion-option>19</ion-option>
+        <ion-option>20</ion-option>
+        <ion-option>21</ion-option>
+        <ion-option>22</ion-option>
+        <ion-option>23</ion-option>
+        <ion-option>24</ion-option>
+        <ion-option>25</ion-option>
+        <ion-option>26</ion-option>
+        <ion-option>27</ion-option>
+        <ion-option>28</ion-option>
+        <ion-option>29</ion-option>
+        <ion-option>30</ion-option>
+        <ion-option>31</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block color="dark" (click)="buttonClick()">
+    Start!
+  </button>
+
+  <button ion-button block color="danger">
+  You can search the specific item here~
+  </button>
+
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list (click)="doclick()">
+    <ion-item *ngFor="let item of items">
+      {{ item }}
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+

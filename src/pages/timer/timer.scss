@@ -1,0 +1,20 @@
+page-home {
+
+  .timer-title {
+    color: color($colors, twitter);
+    font-style: italic;
+  }
+;
+
+  .todo-titledone {
+    color: color($colors, danger);
+  }
+;
+
+  .remainDays {
+    float: right;
+    color: #6ff534;
+    text-align: end;
+  }
+}
+
