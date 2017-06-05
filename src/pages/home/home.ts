@@ -23,14 +23,25 @@ export class HomePage {
 
       if(todos){
         this.items = JSON.parse(todos);
+        // console.log(this.items.length);
+        let todayDate=new Date().toISOString().substring(0,10);
+        for(let i=0;i<this.items.length;i++){
+          this.items[i].dis=this.getDis(todayDate,this.items[i].myDate);
+          // console.log(this.items[i].dis);
+        }
+
       }
 
+
+
     });
+
+
+
 
   }
 
   ionViewDidLoad(){
-
   }
 
   addItem(){
@@ -55,10 +66,11 @@ export class HomePage {
   }
 
   viewItem(item){
+    // console.log(item);
     this.navCtrl.push(ItemDetailPage, {
       item: item
     });
-    this.dataService.save(this.items);
+    // this.dataService.save(this.items);
   }
 
   doAlert(){
@@ -123,6 +135,13 @@ export class HomePage {
     if(i%3==0) return 'items-pink';
   }
 
+  getDis(ds1,ds2):number{
+    let d1=new Date(ds1);
+    let d2=new Date(ds2);
+    let disM=d2.getTime()-d1.getTime();
+    let days=Math.floor(disM/(24*3600*1000));
+    return days;
+  }
 
 
 

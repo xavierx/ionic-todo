@@ -1,30 +1,73 @@
 <ion-header>
-  <ion-navbar color="secondary">
+  <ion-navbar color="twitter">
     <ion-title>
-      {{title}}
+      {{item.title}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+
+  <!--<ion-card>-->
+    <!--<ion-card-header>-->
+      <!--<h1>{{title}}</h1>-->
+      <!--<h2>{{"Due time "+myDate}}</h2>-->
+    <!--</ion-card-header>-->
+    <!--<ion-card-content >-->
+      <!--{{description}}-->
+    <!--</ion-card-content>-->
+  <!--</ion-card>-->
+
+
   <ion-card>
-    <ion-card-header>
-      <h2>{{"Due time "+myDate}}</h2>
-    </ion-card-header>
-    <ion-card-content >
-      {{description}}
-
-    </ion-card-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center>
+          <h1>{{item.title}}</h1>
+        </ion-col>
+      </ion-row>
+      <ion-row >
+        <ion-col text-right>
+          <h3>{{item.myDate}}</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row >
+        <ion-col text-center>
+          <h3>{{item.description}}</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row >
+        <ion-col text-center>
+          <button ion-button full color="twitter" (click)="addSubtask()"  icon-left>
+            <ion-icon name="add"></ion-icon>
+            Add Subtask
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-card>
-  <ion-list>
 
-  <ion-item-sliding *ngFor="let child of children;let i=index">
+  <ion-card>
+  <ion-list>
+  <ion-item-sliding *ngFor="let child of item.children;let i=index">
     <ion-item>
-      <ion-label><h2 >{{child.c_title+":  "+child.c_isFin+":  "+child.c_priority+":  "+child.c_date}}</h2></ion-label>
+      <ion-label>
+        <ion-icon *ngIf="child.c_priority" name="star" style="float: left;color: gold;"></ion-icon>
+        <h2 [ngClass]="{not_done: !child.c_isFin,done:child.c_isFin}">
+
+          {{child.c_title}}
+          <span style="float: right;">{{child.c_date}}</span>
+          <!--{{child.c_title+":  "+child.c_isFin+":  "+child.c_priority+":  "+child.c_date}}-->
+
+        </h2>
+
+      </ion-label>
       <!--<p>{{child.priority}}</p>-->
       <!--<ion-toggle color="danger"></ion-toggle>-->
-      <ion-checkbox color="dark" [(ngModel)]="child.c_isFin" item-right></ion-checkbox>
+
+      <ion-checkbox color="dark" [(ngModel)]="child.c_isFin" item-right (click)="finSubtask(i)"></ion-checkbox>
     </ion-item>
+
     <ion-item-options side="right">
       <button ion-button color="danger" (click)="completeSubtask(i)" >
         <ion-icon name="delete"></ion-icon>
@@ -34,11 +77,8 @@
   </ion-item-sliding>
 
   </ion-list>
-  <ion-buttons>
-    <button ion-button color="secondary" (click)="addSubtask()"  icon-left>
-      <ion-icon name="add"></ion-icon>
-      Add Subtask
-    </button>
-  </ion-buttons>
+  </ion-card>
+
+
 
 </ion-content>

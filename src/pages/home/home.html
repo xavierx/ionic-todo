@@ -41,7 +41,7 @@
 <ion-header>
   <ion-navbar color="twitter">
     <ion-title>
-      Todos! --x
+      Todos
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
@@ -64,12 +64,9 @@
 
 
             <!--<ion-col>-->
-              <h2   class="{{getClass(i)}}">{{item.title}}</h2>
+              <!--<h2   class="{{getClass(i)}}">{{item.title}}</h2>-->
+              <h2   [ngClass]="{'todo_titledone':item.dis<0,todo_title:item.dis>=0}">{{item.title}}</h2>
             <!--</ion-col>-->
-
-
-
-
 
           <!--<h2   class="{{item.dis<60? 'todo-title':'todo-titledone'}}">{{item.title}}</h2>-->
           <!--<h2 *ngIf="item.dis<60"  class="todo-titledone">{{item.title}}</h2>-->

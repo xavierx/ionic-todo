@@ -107,13 +107,12 @@ page-home {
   //  color:#2ec95c;
   //}
 
-  .todo-title{
+  .todo_title{
     color: color($colors,twitter);
 
-    font-style: italic;
   };
 
-  .todo-titledone{
+  .todo_titledone{
     color: color($colors,danger);
   };
 

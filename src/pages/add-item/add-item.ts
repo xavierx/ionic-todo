@@ -26,6 +26,7 @@ export class AddItemPage {
       description: this.description,
       myDate:this.myDate,
       dis:this.getDis(todayDate,this.myDate),
+      workTime:0,
       children:[],
     };
 
@@ -43,6 +44,10 @@ export class AddItemPage {
     let disM=d2.getTime()-d1.getTime();
     let days=Math.floor(disM/(24*3600*1000))
     return days;
+  }
+
+  sayHello(){
+    return "hello";
   }
 
 }
